@@ -9,9 +9,11 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CinemaWindowsApp
 {
+
     public partial class LoginForm : Form
     {
         public static User CurrentUser { get; set; }
@@ -42,18 +44,23 @@ namespace CinemaWindowsApp
 
         private void buttonLog_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text;
+            //string username = txtUsername.Text.Trim();
+            //string password = txtPassword.Text;
 
-            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            {
-                MessageBox.Show("Введите имя пользователя и пароль", "Ошибка",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
-            string hashedPassword = HashPassword(password);
+            //if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            //{
+            //    MessageBox.Show("Введите имя пользователя и пароль", "Ошибка",
+            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    return;
+            //}
 
+            //string hashedPassword = HashPassword(password);
+
+            txtPassword.Text = "admin";
+            txtUsername.Text = "admin";
+
+            string hashedPassword = HashPassword(txtPassword.Text);
             try
             {
                 using (var conn = new NpgsqlConnection("Host=localhost; Database=film_archive; User Id = SuperUser; Password = 1234;"))
@@ -65,7 +72,9 @@ namespace CinemaWindowsApp
 
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
-                        cmd.Parameters.AddWithValue("@username", username);
+                        //cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+
                         cmd.Parameters.AddWithValue("@password", hashedPassword);
 
                         using (var reader = cmd.ExecuteReader())
@@ -101,8 +110,8 @@ namespace CinemaWindowsApp
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            //RegisterForm registerForm = new RegisterForm();
-            //registerForm.ShowDialog();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.ShowDialog();
         }
 
         private void buttonExit_Click(object sender, EventArgs e)

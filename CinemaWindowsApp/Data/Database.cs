@@ -11,7 +11,6 @@ namespace CinemaWindowsApp.Data
 {
     internal class Database
     {
-        // ЗАМЕНИТЕ ПАРОЛЬ НА СВОЙ!
         private string connectionString = "Host=localhost; Database=film_archive; User Id = SuperUser; Password = 1234; ";
 
         public NpgsqlConnection GetConnection()

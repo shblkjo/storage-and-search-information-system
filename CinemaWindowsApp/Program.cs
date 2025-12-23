@@ -16,7 +16,20 @@ namespace CinemaWindowsApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginForm());
+            // Создаем и показываем форму входа
+            LoginForm loginForm = new LoginForm();
+
+            // Показываем форму входа как диалог
+            if (loginForm.ShowDialog() == DialogResult.OK)
+            {
+                // Если вход успешен, запускаем главную форму
+                Application.Run(new MainForm());
+            }
+            else
+            {
+                // Если пользователь отменил вход
+                Application.Exit();
+            }
         }
     }
 }
