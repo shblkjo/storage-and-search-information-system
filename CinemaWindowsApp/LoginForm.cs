@@ -44,23 +44,23 @@ namespace CinemaWindowsApp
 
         private void buttonLog_Click(object sender, EventArgs e)
         {
-            //string username = txtUsername.Text.Trim();
-            //string password = txtPassword.Text;
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text;
 
 
-            //if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
-            //{
-            //    MessageBox.Show("Введите имя пользователя и пароль", "Ошибка",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
+            {
+                MessageBox.Show("Введите имя пользователя и пароль", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
             //string hashedPassword = HashPassword(password);
 
-            txtPassword.Text = "admin";
-            txtUsername.Text = "admin";
+            //txtPassword.Text = "admin";
+            //txtUsername.Text = "admin";
 
-            string hashedPassword = HashPassword(txtPassword.Text);
+            string hashedPassword = HashPassword(password);
             try
             {
                 using (var conn = new NpgsqlConnection("Host=localhost; Database=film_archive; User Id = SuperUser; Password = 1234;"))
@@ -73,7 +73,7 @@ namespace CinemaWindowsApp
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         //cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                        cmd.Parameters.AddWithValue("@username", username);
 
                         cmd.Parameters.AddWithValue("@password", hashedPassword);
 

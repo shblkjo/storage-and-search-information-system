@@ -31,8 +31,6 @@ namespace CinemaWindowsApp
 
         private void SetupDataGridView()
         {
-            // Настраиваем внешний вид DataGridView
-
             dataGridView.RowHeadersVisible = false;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;

@@ -95,6 +95,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddToCollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddToCollectionForm.Designer.cs">
+      <DependentUpon>AddToCollectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateCollectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateCollectionForm.Designer.cs">
+      <DependentUpon>CreateCollectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Data\Database.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -122,6 +134,12 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddToCollectionForm.resx">
+      <DependentUpon>AddToCollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateCollectionForm.resx">
+      <DependentUpon>CreateCollectionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

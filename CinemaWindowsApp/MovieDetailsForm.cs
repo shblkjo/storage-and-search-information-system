@@ -22,6 +22,10 @@ namespace CinemaWindowsApp
         {
             InitializeComponent();
         }
+        private void LoadUserInfo()
+        {
+
+        }
 
         public void LoadMovieDetails(NpgsqlDataReader reader, int userId = 0)
         {
@@ -218,31 +222,37 @@ namespace CinemaWindowsApp
 
         private void AddCollectionButton()
         {
-            Button btnAddToCollection = new Button();
-            btnAddToCollection.Text = "Добавить в подборку";
-            btnAddToCollection.Size = new Size(150, 30);
-            btnAddToCollection.Location = new Point(this.Width - 170, 20);
-            btnAddToCollection.Click += BtnAddToCollection_Click;
-            this.Controls.Add(btnAddToCollection);
+            Button buttonAddToCollection = new Button();
+            buttonAddToCollection.Text = "Добавить в подборку";
+            buttonAddToCollection.Size = new Size(150, 30);
+            buttonAddToCollection.Location = new Point(this.Width - 170, 20);
+            buttonAddToCollection.Click += ButtonAddToCollection_Click;
+            this.Controls.Add(buttonAddToCollection);
         }
 
         private void AddAdminPosterButton()
         {
-            Button btnUploadPoster = new Button();
-            btnUploadPoster.Text = "Загрузить постер";
-            btnUploadPoster.Size = new Size(150, 30);
-            btnUploadPoster.Location = new Point(this.Width - 170, 60);
-            btnUploadPoster.Click += BtnUploadPoster_Click;
-            this.Controls.Add(btnUploadPoster);
+            Button buttonUploadPoster = new Button();
+            buttonUploadPoster.Text = "Загрузить постер";
+            buttonUploadPoster.Size = new Size(150, 30);
+            buttonUploadPoster.Location = new Point(this.Width - 170, 60);
+            buttonUploadPoster.Click += ButtonUploadPoster_Click;
+            this.Controls.Add(buttonUploadPoster);
+
+            // Скрываем админские кнопки если не админ
+            if (!LoginForm.CurrentUser.IsAdmin)
+            {
+                buttonUploadPoster.Visible = false;
+            }
         }
 
-        private void BtnAddToCollection_Click(object sender, EventArgs e)
+        private void ButtonAddToCollection_Click(object sender, EventArgs e)
         {
-            //AddToCollectionForm addForm = new AddToCollectionForm(movieId, userId);
-            //addForm.ShowDialog();
+            AddToCollectionForm addForm = new AddToCollectionForm(movieId, userId);
+            addForm.ShowDialog();
         }
 
-        private void BtnUploadPoster_Click(object sender, EventArgs e)
+        private void ButtonUploadPoster_Click(object sender, EventArgs e)
         {
             //UploadPosterForm uploadForm = new UploadPosterForm(movieId);
             //if (uploadForm.ShowDialog() == DialogResult.OK)
@@ -254,7 +264,7 @@ namespace CinemaWindowsApp
             //}
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
+        private void ButtonClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
