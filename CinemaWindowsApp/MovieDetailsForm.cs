@@ -254,14 +254,14 @@ namespace CinemaWindowsApp
 
         private void ButtonUploadPoster_Click(object sender, EventArgs e)
         {
-            //UploadPosterForm uploadForm = new UploadPosterForm(movieId);
-            //if (uploadForm.ShowDialog() == DialogResult.OK)
-            //{
-            //    // Перезагружаем постер
-            //    LoadMoviePoster();
-            //    MessageBox.Show("Постер успешно загружен", "Успех",
-            //        MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
+            UploadPosterForm uploadForm = new UploadPosterForm(movieId);
+            if (uploadForm.ShowDialog() == DialogResult.OK)
+            {
+                // Перезагружаем постер
+                LoadMoviePoster();
+                MessageBox.Show("Постер успешно загружен", "Успех",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void ButtonClose_Click(object sender, EventArgs e)

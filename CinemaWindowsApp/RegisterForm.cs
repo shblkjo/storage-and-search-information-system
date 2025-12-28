@@ -13,6 +13,7 @@ namespace CinemaWindowsApp
             InitializeComponent();
             txtPassword.PasswordChar = '*';
             txtConfirmPassword.PasswordChar = '*';
+            dateTimePickerBirthDate.Checked = false;
         }
 
         private string HashPassword(string password)
@@ -61,10 +62,14 @@ namespace CinemaWindowsApp
                         cmd.Parameters.AddWithValue("@email", txtEmail.Text);
                         cmd.Parameters.AddWithValue("@password", hashedPassword);
 
-                        if (DateTime.TryParse(txtBirthDate.Text, out DateTime birthDate))
-                            cmd.Parameters.AddWithValue("@birthdate", birthDate);
+                        if (dateTimePickerBirthDate.Checked && dateTimePickerBirthDate.Value != null)
+                        {
+                            cmd.Parameters.AddWithValue("@birthdate", dateTimePickerBirthDate.Value);
+                        }
                         else
+                        {
                             cmd.Parameters.AddWithValue("@birthdate", DBNull.Value);
+                        }
 
                         int rows = cmd.ExecuteNonQuery();
 
@@ -78,9 +83,9 @@ namespace CinemaWindowsApp
                     }
                 }
             }
-            catch (PostgresException ex) when (ex.SqlState == PostgresErrorCodes.UniqueViolation)
+            catch (PostgresException ex) when (ex.SqlState == "P0001") 
             {
-                MessageBox.Show("Пользователь с таким именем или email уже существует", "Ошибка",
+                MessageBox.Show($"Ошибка валидации: {ex.MessageText}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)

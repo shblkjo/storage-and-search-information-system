@@ -55,11 +55,6 @@ namespace CinemaWindowsApp
                 return;
             }
 
-            //string hashedPassword = HashPassword(password);
-
-            //txtPassword.Text = "admin";
-            //txtUsername.Text = "admin";
-
             string hashedPassword = HashPassword(password);
             try
             {

@@ -165,8 +165,8 @@ namespace CinemaWindowsApp
         {
             if (LoginForm.CurrentUser.IsAdmin)
             {
-                //AdminMainForm adminForm = new AdminMainForm();
-                //adminForm.ShowDialog();
+                AdminPanelForm adminForm = new AdminPanelForm();
+                adminForm.ShowDialog();
             }
             else
             {
@@ -243,6 +243,11 @@ namespace CinemaWindowsApp
                 MessageBox.Show($"Ошибка загрузки деталей фильма: {ex.Message}", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
         }
 
 
