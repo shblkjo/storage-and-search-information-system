@@ -80,9 +80,6 @@ namespace CinemaWindowsApp
 
                     if (dataGridView.Columns.Contains("Продолжительность (мин)"))
                         dataGridView.Columns["Продолжительность (мин)"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-                    //lblResultCount.Text = $"Найдено фильмов: {dataGridView.Rows.Count}";
-                    //lblViewType.Text = "Просмотр: Все фильмы";
                 }
             }
             catch (Exception ex)
@@ -249,100 +246,5 @@ namespace CinemaWindowsApp
         {
 
         }
-
-
-        //// ==================== КНОПКА "ПОИСК ПО ФИЛЬТРАМ" ====================
-        //private void btnFilterSearch_Click(object sender, EventArgs e)
-        //{
-        //    FilterSearchForm filterForm = new FilterSearchForm();
-        //    if (filterForm.ShowDialog() == DialogResult.OK)
-        //    {
-        //        // Получаем результаты фильтрации
-        //        DataTable filteredResults = filterForm.GetFilteredResults();
-
-        //        if (filteredResults != null && filteredResults.Rows.Count > 0)
-        //        {
-        //            dataGridView.DataSource = filteredResults;
-
-        //            // Скрываем ID
-        //            if (dataGridView.Columns.Contains("id"))
-        //                dataGridView.Columns["id"].Visible = false;
-
-        //            // Форматируем
-        //            if (dataGridView.Columns.Contains("Рейтинг"))
-        //            {
-        //                dataGridView.Columns["Рейтинг"].DefaultCellStyle.Format = "0.0";
-        //                dataGridView.Columns["Рейтинг"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-        //            }
-
-        //            lblResultCount.Text = $"Найдено фильмов: {dataGridView.Rows.Count}";
-        //            lblViewType.Text = "🔍 Результаты фильтрации";
-        //        }
-        //        else
-        //        {
-        //            MessageBox.Show("По заданным фильтрам ничего не найдено", "Результаты поиска",
-        //                MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            LoadAllMovies();
-        //        }
-        //    }
-        //}
-
-        //// ==================== КНОПКА "ОЧИСТИТЬ ПОИСК" ====================
-        //private void btnClearSearch_Click(object sender, EventArgs e)
-        //{
-        //    txtSearch.Clear();
-        //    LoadAllMovies();
-        //}
-
-        //// ==================== ДРУГИЕ КНОПКИ ====================
-        //private void btnShowAllMovies_Click(object sender, EventArgs e)
-        //{
-        //    LoadAllMovies();
-        //}
-
-        //private void btnShowCollections_Click(object sender, EventArgs e)
-        //{
-        //    CollectionsForm collectionsForm = new CollectionsForm(LoginForm.CurrentUser.Id);
-        //    collectionsForm.ShowDialog();
-        //}
-
-        //private void btnAddMovie_Click(object sender, EventArgs e)
-        //{
-        //    AddMovieForm addForm = new AddMovieForm();
-        //    if (addForm.ShowDialog() == DialogResult.OK)
-        //    {
-        //        LoadAllMovies(); // Обновляем список
-        //    }
-        //}
-
-        //private void btnReports_Click(object sender, EventArgs e)
-        //{
-        //    ReportsForm reportsForm = new ReportsForm();
-        //    reportsForm.ShowDialog();
-        //}
-
-        //private void btnLogout_Click(object sender, EventArgs e)
-        //{
-        //    LoginForm.CurrentUser = null;
-        //    this.Close();
-
-        //    LoginForm loginForm = new LoginForm();
-        //    loginForm.Show();
-        //}
-
-        //private void btnExit_Click(object sender, EventArgs e)
-        //{
-        //    Application.Exit();
-        //}
-
-        //// ==================== ОБРАБОТКА НАЖАТИЯ ENTER В ПОИСКЕ ====================
-        //private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
-        //{
-        //    if (e.KeyChar == (char)Keys.Enter)
-        //    {
-        //        btnSearch_Click(sender, e);
-        //        e.Handled = true;
-        //    }
-        //}
     }
 }
