@@ -167,9 +167,10 @@ namespace CinemaWindowsApp
                     }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Игнорируем ошибку, вернем null
+                MessageBox.Show($"Ошибка загрузки постера: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return null;
