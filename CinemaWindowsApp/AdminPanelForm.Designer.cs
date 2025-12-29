@@ -300,6 +300,7 @@
             this.button15.TabIndex = 7;
             this.button15.Text = "Удалить";
             this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.buttonDeleteUser_Click);
             // 
             // dataGridViewUsers
             // 
@@ -329,6 +330,7 @@
             this.button3.TabIndex = 11;
             this.button3.Text = "Удалить";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.buttonDeleteCollection_Click);
             // 
             // dataGridViewCollections
             // 
