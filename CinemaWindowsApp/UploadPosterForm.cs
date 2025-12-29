@@ -26,7 +26,7 @@ namespace CinemaWindowsApp
             this.Text = $"Загрузка постера для фильма ID: {movieId}";
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private void buttonBrowse_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
@@ -56,7 +56,7 @@ namespace CinemaWindowsApp
             }
         }
 
-        private void btnUpload_Click(object sender, EventArgs e)
+        private void buttonUpload_Click(object sender, EventArgs e)
         {
             if (imageData == null || imageData.Length == 0)
             {
@@ -109,7 +109,7 @@ namespace CinemaWindowsApp
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+        private void buttonCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();

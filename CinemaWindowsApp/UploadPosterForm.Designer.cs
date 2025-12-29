@@ -31,6 +31,9 @@
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
+            this.buttonBrowse = new System.Windows.Forms.Button();
+            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonUpload = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtFilePath
@@ -57,11 +60,44 @@
             this.lblStatus.Size = new System.Drawing.Size(0, 13);
             this.lblStatus.TabIndex = 2;
             // 
+            // buttonBrowse
+            // 
+            this.buttonBrowse.Location = new System.Drawing.Point(121, 148);
+            this.buttonBrowse.Name = "buttonBrowse";
+            this.buttonBrowse.Size = new System.Drawing.Size(73, 22);
+            this.buttonBrowse.TabIndex = 3;
+            this.buttonBrowse.Text = "Выбрать";
+            this.buttonBrowse.UseVisualStyleBackColor = true;
+            this.buttonBrowse.Click += new System.EventHandler(this.buttonBrowse_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(279, 148);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(73, 22);
+            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.Text = "Отмена";
+            this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonUpload
+            // 
+            this.buttonUpload.Location = new System.Drawing.Point(200, 148);
+            this.buttonUpload.Name = "buttonUpload";
+            this.buttonUpload.Size = new System.Drawing.Size(73, 22);
+            this.buttonUpload.TabIndex = 5;
+            this.buttonUpload.Text = "Загрузить";
+            this.buttonUpload.UseVisualStyleBackColor = true;
+            this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
+            // 
             // UploadPosterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(364, 131);
+            this.ClientSize = new System.Drawing.Size(364, 182);
+            this.Controls.Add(this.buttonUpload);
+            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.buttonBrowse);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilePath);
@@ -77,5 +113,8 @@
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblStatus;
+        private System.Windows.Forms.Button buttonBrowse;
+        private System.Windows.Forms.Button buttonCancel;
+        private System.Windows.Forms.Button buttonUpload;
     }
 }
