@@ -54,6 +54,7 @@
             this.chkDirectors = new System.Windows.Forms.CheckedListBox();
             this.chkActors = new System.Windows.Forms.CheckedListBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDuration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numRating)).BeginInit();
@@ -279,11 +280,21 @@
             this.label12.TabIndex = 25;
             this.label12.Text = "Режиссеры";
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(80, 382);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(45, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Актеры";
+            // 
             // MovieForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 501);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.chkActors);
             this.Controls.Add(this.chkDirectors);
@@ -349,5 +360,6 @@
         private System.Windows.Forms.CheckedListBox chkDirectors;
         private System.Windows.Forms.CheckedListBox chkActors;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
     }
 }

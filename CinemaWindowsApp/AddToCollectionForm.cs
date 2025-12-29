@@ -54,6 +54,8 @@ namespace CinemaWindowsApp
                     dgvCollections.Columns["already_added"].HeaderText = "Добавлен";
                     dgvCollections.Columns["already_added"].Width = 70;
 
+                    dgvCollections.AllowUserToAddRows = false;
+
                     lblCollectionsCount.Text = $"Мои подборки: {dgvCollections.Rows.Count}";
                 }
             }

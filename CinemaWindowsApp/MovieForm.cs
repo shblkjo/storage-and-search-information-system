@@ -405,7 +405,7 @@ namespace CinemaWindowsApp
             }
             catch (PostgresException pgEx)
             {
-                MessageBox.Show($"Ошибка загрузки жанров фильма: {pgEx.Message}", "Ошибка",
+                MessageBox.Show($"Ошибка: {pgEx.Message}", "Ошибка",
                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
