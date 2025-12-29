@@ -94,7 +94,7 @@
             this.Controls.Add(this.lblCollectionsCount);
             this.Controls.Add(this.dgvCollections);
             this.Name = "AddToCollectionForm";
-            this.Text = "AddToCollectionForm";
+            this.Text = "Добавление в коллекцию";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCollections)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

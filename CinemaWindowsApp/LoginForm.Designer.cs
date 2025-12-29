@@ -112,7 +112,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "LoginForm";
-            this.Text = "LoginForm";
+            this.Text = "Вход";
             this.ResumeLayout(false);
             this.PerformLayout();
 

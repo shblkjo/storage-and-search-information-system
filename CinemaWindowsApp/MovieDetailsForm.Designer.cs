@@ -180,7 +180,7 @@
             this.Controls.Add(this.lblYear);
             this.Controls.Add(this.lblTitle);
             this.Name = "MovieDetailsForm";
-            this.Text = "MovieDetailsForm";
+            this.Text = "Подробные детали";
             this.ResumeLayout(false);
             this.PerformLayout();
 

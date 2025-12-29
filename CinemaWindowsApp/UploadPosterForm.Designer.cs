@@ -102,7 +102,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFilePath);
             this.Name = "UploadPosterForm";
-            this.Text = "UploadPosterForm";
+            this.Text = "Загрузка постера";
             this.ResumeLayout(false);
             this.PerformLayout();
 

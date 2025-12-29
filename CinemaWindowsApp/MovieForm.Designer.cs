@@ -311,7 +311,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTitle);
             this.Name = "MovieForm";
-            this.Text = "MovieForm";
+            this.Text = "Фильмы";
             this.Load += new System.EventHandler(this.MovieForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numDuration)).EndInit();

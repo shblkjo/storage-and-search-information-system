@@ -112,7 +112,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtTitle);
             this.Name = "CreateCollectionForm";
-            this.Text = "CreateCollectionForm";
+            this.Text = "Создание коллекции";
             this.ResumeLayout(false);
             this.PerformLayout();
 

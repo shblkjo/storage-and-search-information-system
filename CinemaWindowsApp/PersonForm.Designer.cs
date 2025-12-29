@@ -224,7 +224,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFirstName);
             this.Name = "PersonForm";
-            this.Text = "PersonForm";
+            this.Text = "Персоны";
             this.Load += new System.EventHandler(this.PersonForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

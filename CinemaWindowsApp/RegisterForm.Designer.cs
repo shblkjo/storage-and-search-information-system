@@ -160,7 +160,7 @@
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtUsername);
             this.Name = "RegisterForm";
-            this.Text = "RegisterForm";
+            this.Text = "Регистрация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
